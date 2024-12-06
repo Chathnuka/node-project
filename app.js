@@ -3,9 +3,13 @@ var app = express()
 
 var port = 3000
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'src')));
+
 app.get("/", function(req, res){
 
-    res.send("Hello World! I'm Chathnuka. I'm 22 years old.")
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
     
 });
 
